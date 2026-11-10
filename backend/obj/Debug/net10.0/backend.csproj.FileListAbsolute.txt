@@ -1,0 +1,66 @@
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\backend.csproj.AssemblyReference.cache
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\rpswa.dswa.cache.json
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\backend.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\backend.AssemblyInfoInputs.cache
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\backend.AssemblyInfo.cs
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\backend.csproj.CoreCompileInputs.cache
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\backend.MvcApplicationPartsAssemblyInfo.cs
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\backend.MvcApplicationPartsAssemblyInfo.cache
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\bin\Debug\net10.0\appsettings.Development.json
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\bin\Debug\net10.0\appsettings.json
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\bin\Debug\net10.0\backend.staticwebassets.endpoints.json
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\bin\Debug\net10.0\backend.exe
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\bin\Debug\net10.0\backend.deps.json
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\bin\Debug\net10.0\backend.runtimeconfig.json
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\bin\Debug\net10.0\backend.dll
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\bin\Debug\net10.0\backend.pdb
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\bin\Debug\net10.0\Microsoft.OpenApi.dll
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\rjimswa.dswa.cache.json
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\scopedcss\bundle\backend.styles.css
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\staticwebassets.build.json
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\staticwebassets.build.json.cache
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\staticwebassets.development.json
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\swae.build.ex.cache
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\backend.csproj.Up2Date
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\backend.dll
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\refint\backend.dll
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\backend.pdb
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\backend.genruntimeconfig.cache
+D:\Users\20241144010059\Downloads\backend-projetointegrador\backend-projetointegrador\backend\obj\Debug\net10.0\ref\backend.dll
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\backend.csproj.AssemblyReference.cache
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\rpswa.dswa.cache.json
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\backend.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\backend.AssemblyInfoInputs.cache
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\backend.AssemblyInfo.cs
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\backend.csproj.CoreCompileInputs.cache
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\backend.MvcApplicationPartsAssemblyInfo.cs
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\backend.MvcApplicationPartsAssemblyInfo.cache
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\backend.dll
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\refint\backend.dll
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\backend.pdb
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\bin\Debug\net10.0\appsettings.Development.json
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\bin\Debug\net10.0\appsettings.json
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\bin\Debug\net10.0\backend.staticwebassets.endpoints.json
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\bin\Debug\net10.0\backend.exe
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\bin\Debug\net10.0\backend.deps.json
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\bin\Debug\net10.0\backend.runtimeconfig.json
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\bin\Debug\net10.0\backend.dll
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\bin\Debug\net10.0\backend.pdb
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\bin\Debug\net10.0\Microsoft.OpenApi.dll
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\rjimswa.dswa.cache.json
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\scopedcss\bundle\backend.styles.css
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\staticwebassets.build.json
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\staticwebassets.build.json.cache
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\staticwebassets.development.json
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\swae.build.ex.cache
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\backend.csproj.Up2Date
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\backend.genruntimeconfig.cache
+D:\Users\20241144010059\Desktop\Projeto Integrador - GeoBrasil\backend\obj\Debug\net10.0\ref\backend.dll

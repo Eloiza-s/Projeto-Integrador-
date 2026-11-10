@@ -1,0 +1,140 @@
+<mat-toolbar class="topbar">
+  <div class="brand">
+    <mat-icon>public</mat-icon>
+    GeoInsights
+  </div>
+  <span class="spacer"></span>
+  <button mat-stroked-button>
+    <mat-icon>download</mat-icon>
+    Exportar
+  </button>
+</mat-toolbar>
+
+<div class="page-container dashboard">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Painel geográfico</p>
+      <h1>Análise socioeconômica por região</h1>
+      <p>
+        Indicadores de população, renda, densidade, urbanização, IDH e PIB para
+        apoiar decisões estratégicas de localização, investimento e desenvolvimento.
+      </p>
+    </div>
+
+    <div class="hero-badge">
+      <span class="badge-label">Período</span>
+      <strong>2025</strong>
+      <small>Brasil</small>
+    </div>
+  </section>
+
+  <section class="stats-grid">
+    @for (item of indicadores; track item.nome) {
+      <mat-card class="stat-card {{ item.classe }}">
+        <div class="stat-top">
+          <span>{{ item.nome }}</span>
+          <mat-icon>trending_up</mat-icon>
+        </div>
+        <div class="stat-value">{{ item.valor }}</div>
+        <div class="stat-meta">{{ item.meta }}</div>
+        <div class="stat-detail">{{ item.detalhe }}</div>
+      </mat-card>
+    }
+  </section>
+
+  <section class="main-grid">
+    <mat-card class="panel map-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Panorama regional</p>
+          <h2>Distribuição territorial</h2>
+        </div>
+        <span class="status-pill">Atualizado hoje</span>
+      </div>
+
+      <div class="map-layout">
+        <div class="map-region north">Norte</div>
+        <div class="map-region northeast">Nordeste</div>
+        <div class="map-region midwest">Centro-Oeste</div>
+        <div class="map-region southeast">Sudeste</div>
+        <div class="map-region south">Sul</div>
+      </div>
+
+      <div class="legend">
+        <span><i class="dot cyan"></i> menor densidade</span>
+        <span><i class="dot green"></i> maior renda</span>
+        <span><i class="dot amber"></i> crescimento urbano</span>
+      </div>
+    </mat-card>
+
+    <mat-card class="panel ranking-panel">
+      <div class="panel-header compact">
+        <div>
+          <p class="eyebrow">Ranking</p>
+          <h2>Maiores PIBs</h2>
+        </div>
+      </div>
+
+      <div class="ranking-list">
+        @for (item of ranking; track item.nome; let i = $index) {
+          <div class="rank-item">
+            <div class="rank-header">
+              <span class="rank-number">0{{ i + 1 }}</span>
+              <span class="rank-name">{{ item.nome }}</span>
+              <span class="rank-pib">{{ item.pib }}</span>
+            </div>
+            <div class="track">
+              <span [style.width.%]="item.percentual"></span>
+            </div>
+          </div>
+        }
+      </div>
+    </mat-card>
+  </section>
+
+  <section class="table-section">
+    <mat-card class="panel table-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Comparativo</p>
+          <h2>Indicadores por região</h2>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Região</th>
+              <th>População</th>
+              <th>Renda</th>
+              <th>Densidade</th>
+              <th>Urbanização</th>
+              <th>IDH</th>
+              <th>PIB</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (regiao of regioes; track regiao.nome) {
+              <tr>
+                <td>
+                  <div class="region-name">
+                    <span class="region-marker"></span>
+                    {{ regiao.nome }}
+                  </div>
+                  <small>{{ regiao.destaque }}</small>
+                </td>
+                <td>{{ regiao.populacao }}</td>
+                <td>{{ regiao.renda }}</td>
+                <td>{{ regiao.densidade }}</td>
+                <td>{{ regiao.urbanizacao }}</td>
+                <td>{{ regiao.idh }}</td>
+                <td>{{ regiao.pib }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </mat-card>
+  </section>
+</div>

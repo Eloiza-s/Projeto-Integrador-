@@ -1,0 +1,35 @@
+@exemplo01_HostAddress = http://localhost:5151
+
+GET {{exemplo01_HostAddress}}/api/produtos
+Accept: application/json
+
+###
+
+GET {{exemplo01_HostAddress}}/api/produtos/1
+Accept: application/json
+
+###
+POST {{exemplo01_HostAddress}}/api/produtos
+Content-Type: application/json
+
+{
+  "id": 4,
+  "nome": "Controle",
+  "preco": 149.99,
+  "quantidade": 2
+}
+
+###
+
+PUT {{exemplo01_HostAddress}}/api/produtos/3
+Content-Type: application/json
+
+{
+  "id": 3,
+  "nome": "Monitor 20 polegadas",
+  "preco": 599.00,
+  "quantidade": 10
+}
+
+###
+DELETE {{exemplo01_HostAddress}}/api/produtos/2
