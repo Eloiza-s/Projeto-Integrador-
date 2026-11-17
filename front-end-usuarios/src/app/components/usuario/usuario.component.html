@@ -1,0 +1,279 @@
+<mat-toolbar class="topbar">
+  <div class="brand">
+    <mat-icon>public</mat-icon>
+    GeoInsights
+  </div>
+  <span class="spacer"></span>
+  <div class="user-panel">
+    <div class="user-info">
+      <span class="user-name">Olá, {{ usuarioLogadoNome }}</span>
+      <small>{{ perfilAtual }}</small>
+    </div>
+    <button mat-stroked-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Sair
+    </button>
+  </div>
+</mat-toolbar>
+
+<div class="page-container dashboard">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Painel geográfico</p>
+      <h1>Análise socioeconômica por região</h1>
+      <p>
+        Indicadores de população, renda, densidade, urbanização, IDH e PIB para
+        apoiar decisões estratégicas de localização, investimento e desenvolvimento.
+      </p>
+    </div>
+
+    <div class="hero-badge">
+      <span class="badge-label">Período</span>
+      <strong>2025</strong>
+      <small>Brasil</small>
+    </div>
+  </section>
+
+  <section class="stats-grid">
+    @for (item of indicadores; track item.nome) {
+      <mat-card class="stat-card {{ item.classe }}">
+        <div class="stat-top">
+          <span>{{ item.nome }}</span>
+          <mat-icon>trending_up</mat-icon>
+        </div>
+        <div class="stat-value">{{ item.valor }}</div>
+        <div class="stat-meta">{{ item.meta }}</div>
+        <div class="stat-detail">{{ item.detalhe }}</div>
+      </mat-card>
+    }
+  </section>
+
+  <section class="main-grid">
+    <mat-card class="panel map-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Panorama regional</p>
+          <h2>Distribuição territorial</h2>
+        </div>
+        <span class="status-pill">Atualizado hoje</span>
+      </div>
+
+      <div class="panel-tools">
+        <input type="text" [(ngModel)]="filtroTexto" placeholder="Buscar por estado ou sigla" />
+        <select [(ngModel)]="filtroRegiao">
+          @for (regiao of regioes; track regiao) {
+            <option [value]="regiao">{{ regiao }}</option>
+          }
+        </select>
+      </div>
+
+      <div class="map-svg-wrap">
+        <img class="regions-svg" src="assets/br.svg" alt="Mapa do Brasil por regiões" />
+      </div>
+
+      <div class="legend">
+        <span><i class="dot cyan"></i> menor densidade</span>
+        <span><i class="dot green"></i> maior renda</span>
+        <span><i class="dot amber"></i> crescimento urbano</span>
+      </div>
+    </mat-card>
+
+    <mat-card class="panel ranking-panel">
+      <div class="panel-header compact">
+        <div>
+          <p class="eyebrow">Ranking</p>
+          <h2>Maiores PIBs</h2>
+        </div>
+      </div>
+
+      <div class="ranking-list">
+        @for (item of ranking; track item.nome; let i = $index) {
+          <div class="rank-item">
+            <div class="rank-header">
+              <span class="rank-number">0{{ i + 1 }}</span>
+              <span class="rank-name">{{ item.nome }}</span>
+              <span class="rank-pib">{{ item.pib }}</span>
+            </div>
+            <div class="track">
+              <span [style.width.%]="item.percentual"></span>
+            </div>
+          </div>
+        }
+      </div>
+    </mat-card>
+  </section>
+
+  <section class="table-section">
+    <mat-card class="panel table-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Comparativo</p>
+          <h2>Indicadores por região</h2>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Região</th>
+              <th>População</th>
+              <th>Renda</th>
+              <th>Densidade</th>
+              <th>Urbanização</th>
+              <th>IDH</th>
+              <th>PIB</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (estado of estadosFiltrados; track estado.sigla) {
+              <tr>
+                <td>
+                  <div class="region-name">
+                    <span class="region-marker"></span>
+                    {{ estado.nome }}
+                  </div>
+                  <small>{{ estado.sigla }} · {{ regiaoPorSigla[estado.sigla] ?? 'Outros' }}</small>
+                </td>
+                <td>{{ formatNumber(estado.populacaoTotal) }}</td>
+                <td>R$ {{ formatNumber(estado.rendaPerCapita) }}</td>
+                <td>{{ formatNumber(estado.densidadeDemografica) }} hab/km²</td>
+                <td>{{ formatNumber(estado.taxaUrbanizacao) }}%</td>
+                <td>{{ formatNumber(estado.idh) }}</td>
+                <td>R$ {{ formatNumber(estado.pibBilhoes) }} bi</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </mat-card>
+  </section>
+
+  <section class="admin-section">
+    <mat-card class="panel users-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Gestão</p>
+          <h2>Usuários do sistema</h2>
+        </div>
+        @if (podeGerenciarUsuarios) {
+          <button mat-stroked-button (click)="prepararNovoUsuario()">Novo usuário</button>
+        }
+      </div>
+
+      @if (mensagem) {
+        <div class="alert alert-{{ tipoMensagem }}">{{ mensagem }}</div>
+      }
+
+      <div class="table-toolbar">
+        <input type="text" [(ngModel)]="filtroTexto" placeholder="Buscar usuário por nome, e-mail ou perfil" />
+        <select [(ngModel)]="filtroAtivo">
+          <option value="todos">Todos</option>
+          <option value="S">Ativos</option>
+          <option value="N">Inativos</option>
+        </select>
+        <button mat-flat-button color="primary" (click)="exportarCsv()">Exportar CSV</button>
+      </div>
+
+      @if (podeGerenciarUsuarios) {
+        <div class="user-form">
+          <h3>{{ modoEdicao ? 'Editar usuário' : 'Cadastrar usuário' }}</h3>
+          <div class="form-grid">
+            <label>
+              Nome
+              <input [(ngModel)]="form.nome" type="text" />
+            </label>
+            <label>
+              E-mail
+              <input [(ngModel)]="form.email" type="email" />
+            </label>
+            <label>
+              Senha
+              <input [(ngModel)]="form.senha" type="password" [placeholder]="modoEdicao ? 'Nova senha opcional' : 'Informe a senha'" />
+            </label>
+            <label>
+              Perfil
+              <select [(ngModel)]="form.perfil">
+                @for (perfil of perfis; track perfil) {
+                  <option [value]="perfil">{{ perfil }}</option>
+                }
+              </select>
+            </label>
+            <label>
+              Situação
+              <select [(ngModel)]="form.ativo">
+                <option value="S">Ativo</option>
+                <option value="N">Inativo</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-actions">
+            <button mat-flat-button color="primary" (click)="salvarUsuario()">{{ modoEdicao ? 'Salvar alterações' : 'Cadastrar' }}</button>
+            <button mat-stroked-button (click)="prepararNovoUsuario()">Limpar</button>
+          </div>
+        </div>
+      }
+
+      <div class="table-wrap table-user-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Perfil</th>
+              <th>Status</th>
+              @if (podeGerenciarUsuarios) {
+                <th>Ações</th>
+              }
+            </tr>
+          </thead>
+          <tbody>
+            @if (carregando) {
+              <tr>
+                <td colspan="5">Carregando usuários...</td>
+              </tr>
+            } @else {
+              @for (usuario of usuariosFiltrados; track usuario.id) {
+                <tr>
+                  <td>{{ usuario.nome }}</td>
+                  <td>{{ usuario.email }}</td>
+                  <td>{{ usuario.perfil }}</td>
+                  <td>{{ statusTexto(usuario.ativo) }}</td>
+                  @if (podeGerenciarUsuarios) {
+                    <td class="action-cell">
+                      <button mat-button color="primary" (click)="editarUsuario(usuario)">Editar</button>
+                      <button mat-button color="warn" (click)="excluirUsuario(usuario.id)">Excluir</button>
+                    </td>
+                  }
+                </tr>
+              }
+            }
+          </tbody>
+        </table>
+      </div>
+    </mat-card>
+  </section>
+
+  <section class="profile-section">
+    <mat-card class="panel profile-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Perfil</p>
+          <h2>Minha conta</h2>
+        </div>
+      </div>
+      <div class="profile-box">
+        <div class="avatar">{{ usuarioLogadoNome.charAt(0).toUpperCase() }}</div>
+        <div>
+          <strong>{{ usuarioLogadoNome }}</strong>
+          <p>{{ perfilAtual }}</p>
+        </div>
+      </div>
+      <ul class="profile-list">
+        <li>Sessão ativa e persistente no navegador</li>
+        <li>Exportação rápida de usuários em CSV</li>
+        <li>Permissões ajustadas por perfil</li>
+      </ul>
+    </mat-card>
+  </section>
+</div>

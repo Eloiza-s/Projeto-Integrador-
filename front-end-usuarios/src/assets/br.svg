@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 620" role="img" aria-labelledby="title desc">
+  <title id="title">Brasil por regiões</title>
+  <desc id="desc">Mapa esquemático do Brasil com destaque para Norte, Nordeste, Centro-Oeste, Sudeste e Sul.</desc>
+
+  <rect width="620" height="620" fill="#081827"/>
+
+  <g stroke="rgba(255,255,255,0.26)" stroke-width="2.2" style="filter: drop-shadow(0 8px 14px rgba(8,24,39,0.22));">
+    <path d="M118 108 L188 72 L248 98 L242 170 L168 196 L92 160 L96 122 Z" fill="#22c55e" opacity="0.95"/>
+    <path d="M188 176 L274 160 L320 192 L318 246 L258 284 L180 262 L146 214 Z" fill="#3b82f6" opacity="0.95"/>
+    <path d="M246 162 L334 128 L424 150 L420 222 L332 274 L252 240 Z" fill="#06b6d4" opacity="0.95"/>
+    <path d="M332 220 L452 198 L518 248 L500 316 L412 340 L330 286 Z" fill="#8b5cf6" opacity="0.95"/>
+    <path d="M246 256 L332 282 L398 318 L366 374 L290 392 L230 336 Z" fill="#fbbf24" opacity="0.95"/>
+  </g>
+
+  <g fill="#f8fafc" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">
+    <text x="170" y="150">Norte</text>
+    <text x="228" y="226">Nordeste</text>
+    <text x="332" y="206">Centro-Oeste</text>
+    <text x="420" y="270">Sudeste</text>
+    <text x="314" y="340">Sul</text>
+  </g>
+</svg>
