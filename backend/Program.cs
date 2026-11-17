@@ -1,31 +1,36 @@
+using Microsoft.EntityFrameworkCore;
+using backend.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
-builder.Services.AddOpenApi();
-builder.Services.AddScoped<backend_projetointegrador.Services.AuthService>();
+// Conexão com o SQLite
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// vai permitir requisições externas (API do IBGE)
+builder.Services.AddHttpClient();
+
+// libera o acesso para o frontend
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAngular", policy =>
-    {
-        policy.WithOrigins(
-                  "http://localhost:4200",
-                  "http://localhost:57032",
-                  "http://127.0.0.1:4200",
-                  "http://127.0.0.1:57032")
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
+    options.AddPolicy("AllowAll", policy =>
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader());
 });
+
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+// Cria as tabelas (migrations) e popula os 5 estados automaticamente
+using (var scope = app.Services.CreateScope())
 {
-    app.MapOpenApi();
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await DbSeeder.PopularBancoAsync(context);
 }
 
-app.UseCors("AllowAngular");
+app.UseCors("AllowAll");
 app.UseAuthorization();
 app.MapControllers();
 
